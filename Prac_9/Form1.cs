@@ -12,7 +12,8 @@ namespace Create_a_bill
 {
     public partial class Form1 : Form
     {
-        int total = 0, i = 0;
+        double total = 0; 
+        int i = 0;
         public Form1()
         {
             InitializeComponent();
@@ -64,11 +65,12 @@ namespace Create_a_bill
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int n = int.Parse(listView2.SelectedItems[0].SubItems[1].Text);
-            int s = int.Parse(listView2.SelectedItems[0].SubItems[2].Text);
-            total = total - (n * s);
-            listView2.Items.Remove(listView2.SelectedItems[0]);
-            label1.Text = total.ToString();
+            this.Close();
+            //int n = int.Parse(listView2.SelectedItems[0].SubItems[1].Text);
+            //int s = int.Parse(listView2.SelectedItems[0].SubItems[2].Text);
+            //total = total - (n * s);
+            //listView2.Items.Remove(listView2.SelectedItems[0]);
+            //label1.Text = total.ToString();
         }
 
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,7 +85,8 @@ namespace Create_a_bill
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int p, q,z;
+            int p, q, z;
+            double gst = 0;
             string iname;
             p = int.Parse(listView1.SelectedItems[0].SubItems[1].Text);
             q = int.Parse(numericUpDown1.Text);
@@ -96,8 +99,17 @@ namespace Create_a_bill
             i++;
             p = p * q;
             total = total + p;
+            gst = (18 * total) / 100;
+            total = total + gst;
+            label3.Text = gst.ToString();
+            label3.Visible = true;
             label1.Text = total.ToString();
             label1.Visible = true;
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
