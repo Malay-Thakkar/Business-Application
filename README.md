@@ -1,8 +1,10 @@
 # Business-Application
 How to use the application?
 (1) LOg IN to application 
-      user Name:Malay
-      password:2002
+      user Name:admin
+      password:admin@123
+      try another Name: malay
+      and password:2002
       ![image](https://user-images.githubusercontent.com/78149426/163844992-07537db8-3204-488f-9558-99ee972b5c4a.png)
 
 (2) There are many options. select according to your choice.
